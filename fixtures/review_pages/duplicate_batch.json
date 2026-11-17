@@ -1,0 +1,41 @@
+[
+  {
+    "kind": "review_page",
+    "app_id": "app-dup",
+    "store": "alpha",
+    "page_number": 1,
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-1", "event": "upsert", "revision": 1, "ts": "2026-11-01T08:00:00Z",
+       "version": "1.0.0", "rating": 5, "author": "a1", "title": "good", "content": "ok"},
+      {"id": "rv-1", "event": "upsert", "revision": 1, "ts": "2026-11-01T08:00:00Z",
+       "version": "1.0.0", "rating": 5, "author": "a1", "title": "good", "content": "ok"},
+      {"id": "rv-2", "event": "upsert", "revision": 1, "ts": "2026-11-01T09:00:00Z",
+       "version": "1.0.0", "rating": 4, "author": "a2", "title": "nice", "content": "fine"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-dup",
+    "store": "alpha",
+    "page_number": 2,
+    "has_more": false,
+    "reviews": [
+      {"id": "rv-1", "event": "edit", "revision": 2, "ts": "2026-11-03T08:00:00Z",
+       "version": "1.1.0", "title": "good (edited)", "rating": 4},
+      {"id": "rv-2", "event": "delete", "revision": 2, "ts": "2026-11-03T09:00:00Z",
+       "version": "1.1.0"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-dup",
+    "store": "alpha",
+    "page_number": 1,
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-1", "event": "upsert", "revision": 1, "ts": "2026-11-01T08:00:00Z",
+       "version": "1.0.0", "rating": 5, "author": "a1", "title": "good", "content": "ok"}
+    ]
+  }
+]

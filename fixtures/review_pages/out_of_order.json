@@ -1,0 +1,35 @@
+[
+  {
+    "kind": "review_page",
+    "app_id": "app-ooo",
+    "store": "alpha",
+    "page_number": 1,
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-1", "event": "upsert", "revision": 1, "ts": "2026-11-01T08:00:00Z",
+       "version": "1.0.0", "rating": 5, "author": "a1", "title": "p1", "content": "a"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-ooo",
+    "store": "alpha",
+    "page_number": 2,
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-2", "event": "upsert", "revision": 1, "ts": "2026-11-02T08:00:00Z",
+       "version": "1.1.0", "rating": 4, "author": "a2", "title": "p2", "content": "b"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-ooo",
+    "store": "alpha",
+    "page_number": 3,
+    "has_more": false,
+    "reviews": [
+      {"id": "rv-3", "event": "upsert", "revision": 1, "ts": "2026-11-03T08:00:00Z",
+       "version": "1.2.0", "rating": 3, "author": "a3", "title": "p3", "content": "c"}
+    ]
+  }
+]

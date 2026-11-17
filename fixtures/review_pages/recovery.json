@@ -1,0 +1,69 @@
+[
+  {
+    "kind": "review_page",
+    "app_id": "app-rec",
+    "store": "alpha",
+    "page_number": 1,
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-1", "event": "upsert", "revision": 1, "ts": "2026-11-01T08:00:00Z",
+       "version": "1.0.0", "rating": 5, "author": "a1", "title": "first", "content": "ok"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-rec",
+    "store": "alpha",
+    "page_number": 2,
+    "has_more": true,
+    "reviews": "BROKEN-PAYLOAD-NOT-A-LIST"
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-rec",
+    "store": "alpha",
+    "page_number": 2,
+    "has_more": false,
+    "reviews": [
+      {"id": "rv-2", "event": "upsert", "revision": 1, "ts": "2026-11-02T08:00:00Z",
+       "version": "1.1.0", "rating": 4, "author": "a2", "title": "recovered", "content": "fine"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-rec",
+    "store": "beta",
+    "cursor": "start",
+    "next_cursor": "c2",
+    "anchor": null,
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-9", "event": "upsert", "revision": 1, "ts": "2026-11-01T10:00:00Z",
+       "version": "2.0.0", "rating": 2, "author": "b1", "title": "cur1", "content": "x"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-rec",
+    "store": "beta",
+    "cursor": "c2",
+    "anchor": "WRONG-ANCHOR",
+    "has_more": false,
+    "reviews": [
+      {"id": "rv-10", "event": "upsert", "revision": 1, "ts": "2026-11-02T10:00:00Z",
+       "version": "2.1.0", "rating": 5, "author": "b2", "title": "cur2", "content": "y"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-rec",
+    "store": "beta",
+    "cursor": "c2",
+    "anchor": "start",
+    "has_more": false,
+    "reviews": [
+      {"id": "rv-10", "event": "upsert", "revision": 1, "ts": "2026-11-02T10:00:00Z",
+       "version": "2.1.0", "rating": 5, "author": "b2", "title": "cur2", "content": "y"}
+    ]
+  }
+]

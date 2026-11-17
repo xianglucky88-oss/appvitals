@@ -1,0 +1,48 @@
+[
+  {
+    "kind": "review_page",
+    "app_id": "app-demo",
+    "store": "alpha",
+    "page_number": 1,
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-1", "event": "upsert", "revision": 1, "ts": "2026-11-01T08:00:00Z",
+       "version": "1.0.0", "rating": 5, "author": "a1", "title": "good", "content": "ok"},
+      {"id": "rv-2", "event": "upsert", "revision": 1, "ts": "2026-11-01T09:00:00Z",
+       "version": "1.0.0", "rating": 4, "author": "a2", "title": "nice", "content": "fine"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-demo",
+    "store": "alpha",
+    "page_number": 2,
+    "has_more": false,
+    "reviews": [
+      {"id": "rv-3", "event": "upsert", "revision": 1, "ts": "2026-11-02T09:00:00Z",
+       "version": "1.1.0", "rating": 3, "author": "a3", "title": "mid", "content": "meh"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-demo",
+    "store": "beta",
+    "cursor": "start",
+    "next_cursor": "c2",
+    "anchor": null,
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-9", "event": "upsert", "revision": 1, "ts": "2026-11-01T10:00:00Z",
+       "version": "2.0.0", "rating": 2, "author": "b1", "title": "old", "content": "x"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-demo",
+    "store": "beta",
+    "cursor": "c2",
+    "anchor": "start",
+    "has_more": false,
+    "reviews": []
+  }
+]

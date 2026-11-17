@@ -1,0 +1,39 @@
+[
+  {
+    "kind": "review_page",
+    "app_id": "app-miss",
+    "store": "alpha",
+    "page_number": 1,
+    "has_more": false,
+    "reviews": [
+      {"id": "rv-1", "event": "upsert", "revision": 1, "ts": "2026-11-01T08:00:00Z",
+       "version": "1.0.0", "author": "a1", "title": "no-rating", "content": "ok"},
+      {"event": "upsert", "revision": 1, "ts": "2026-11-01T09:00:00Z",
+       "version": "1.0.0", "rating": 4, "author": "a2"},
+      {"id": "rv-3", "event": "upsert", "revision": "not-a-number",
+       "ts": "2026-11-01T10:00:00Z", "rating": 5},
+      "junk-not-an-event",
+      {"id": "rv-4", "event": "upsert", "revision": 1, "ts": "2026-11-01T11:00:00Z",
+       "version": "1.0.0", "rating": null, "author": "a4"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-miss",
+    "store": "beta",
+    "cursor": "start",
+    "has_more": true,
+    "reviews": [
+      {"id": "rv-9", "event": "upsert", "revision": 1, "ts": "2026-11-02T08:00:00Z",
+       "version": "2.0.0", "rating": 2, "author": "b1"}
+    ]
+  },
+  {
+    "kind": "review_page",
+    "app_id": "app-miss",
+    "store": "",
+    "page_number": 1,
+    "has_more": false,
+    "reviews": []
+  }
+]
