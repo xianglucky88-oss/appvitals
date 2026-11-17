@@ -1,0 +1,47 @@
+[
+  {
+    "data": {
+      "_stage_dedup": "ok",
+      "_stage_score_align": "naive",
+      "_stage_store_api": "naive",
+      "_stage_unify": "ok",
+      "id": "r-001",
+      "name": "Record One",
+      "src": "alpha",
+      "status": "active",
+      "ts": "2026-11-01T00:00:00Z",
+      "value": 10
+    },
+    "key": "r-001"
+  },
+  {
+    "data": {
+      "_stage_dedup": "ok",
+      "_stage_score_align": "naive",
+      "_stage_store_api": "naive",
+      "_stage_unify": "ok",
+      "id": "r-002",
+      "name": "Record Two",
+      "src": "beta",
+      "status": "active",
+      "ts": "2026-11-02T00:00:00Z",
+      "value": 20
+    },
+    "key": "r-002"
+  },
+  {
+    "data": {
+      "_stage_dedup": "ok",
+      "_stage_score_align": "naive",
+      "_stage_store_api": "naive",
+      "_stage_unify": "ok",
+      "id": "r-003",
+      "name": "Record Three",
+      "src": "alpha",
+      "status": "sold",
+      "ts": "2026-11-03T00:00:00Z",
+      "value": 30
+    },
+    "key": "r-003"
+  }
+]
