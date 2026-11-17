@@ -3,7 +3,7 @@
 运行栈：Python 3.14 + 标准库 `sqlite3` + `httpx` + `pytest`（离线，无需联网）
 
 ## 运行方式
-读 `fixtures/input.json` → `loader` → `normalizer` → 其余已实现变换 → `keyer` → 幂等落 `sqlite`。
+读 `fixtures/input.json` → `loader` → `normalizer` → `versionline` → 其余已实现变换 → `keyer` → 幂等落 `sqlite`。
 ```text
 make run     # 运行离线 happy-path，输出摄取数量和落库行数
 make test    # 运行项目测试，包括流水线、幂等和边界桩
@@ -15,14 +15,14 @@ make test    # 运行项目测试，包括流水线、幂等和边界桩
 通用模块：`loader / normalizer / keyer / store / pipeline / cli`。
 
 ## 当前实现状态
-- `versionline.py`：`process()` 当前抛出 `NotImplementedError`，未接入基础 happy-path。
+- `versionline.py`：已实现并接入流水线。`process()` 为纯函数，规范化版本字符串/构建号/预发布标签/发布日期（UTC），产出可比较排序键、确定性置信度、来源溯源与稳定幂等键（`version_key`/`attribution_key`）；`build_lineage()` 从一批已处理记录重建谱系，标记同版多商店再观察（`reobserved`）与回滚（`rollback`）。兼容旧格式字段（`app_name/ver/version_code/release_tag/published_at`）。非版本记录只打阶段标记并透传。
 - `review_page.py`：`process()` 当前抛出 `NotImplementedError`，未接入基础 happy-path。
 - `score_align.py`：提供基础 `process()`，复制输入记录并补充 `_stage_score_align` 阶段标记。
 - `store_api.py`：提供基础 `process()`，复制输入记录并补充 `_stage_store_api` 阶段标记。
 - `unify.py`：提供基础 `process()`，复制输入记录并补充 `_stage_unify` 阶段标记。
 - `dedup.py`：提供基础 `process()`，复制输入记录并补充 `_stage_dedup` 阶段标记。
 
-当前未实现阶段未进入基础流水线，因此 `make run` 仍可运行已接入的阶段。
+versionline 无进程内可变状态：谱系可在重启后仅从已落库记录重建；`pipeline.run(con=..., records=...)` 支持只重放缺失批次的恢复回放，无需全量重跑。
 
 ## 持久化与测试
 数据通过项目内 SQLite 存储，使用稳定键执行幂等写入；测试夹具位于项目测试目录，运行方式以 `Makefile` 为准。
